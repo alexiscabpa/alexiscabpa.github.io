@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexis Cabrera — Desarrollador de apps / App developer</title>
+<meta name="description" content="Desarrollador independiente de apps móviles (Flutter, Firebase) y sistemas de gestión a medida. Trabajo remoto desde Paraguay. / Freelance mobile app and custom business systems developer, working remotely from Paraguay.">
+<meta name="theme-color" content="#EEF1F5">
+<meta property="og:title" content="Alexis Cabrera — Desarrollador de apps / App developer">
+<meta property="og:description" content="Apps móviles y sistemas a medida con Flutter, Firebase y Java. / Mobile apps and custom systems with Flutter, Firebase and Java.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plano:#EEF1F5;
+    --plano-2:#E2E7EE;
+    --tinta:#101828;
+    --tinta-2:#4A5468;
+    --cobalto:#2B50F5;
+    --senal:#FFD23F;
+    --hoja:#1E7F5C;
+    --blanco:#FFFFFF;
+    --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --texto:"Literata", Georgia, "Times New Roman", serif;
+    --ancho:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--plano);color:var(--tinta);font-family:var(--texto);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--cobalto);outline-offset:3px;border-radius:4px}
+
+  /* idioma: cada texto existe en .es y .en */
+  [data-lang="es"] .en{display:none !important}
+  [data-lang="en"] .es{display:none !important}
+
+  .wrap{max-width:var(--ancho);margin:0 auto;padding:0 28px}
+
+  /* barra superior */
+  .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--plano) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--plano-2)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:64px}
+  .brand{font-family:var(--display);font-weight:800;font-size:1.15rem;letter-spacing:-.01em;text-decoration:none}
+  .nav{display:flex;align-items:center;gap:26px;font-family:var(--display);font-weight:500;font-size:.98rem}
+  .nav a{text-decoration:none;color:var(--tinta-2)}
+  .nav a:hover{color:var(--tinta)}
+  .lang{display:inline-flex;border:1.5px solid var(--tinta);border-radius:999px;overflow:hidden}
+  .lang button{font:inherit;font-family:var(--display);font-weight:700;font-size:.85rem;border:0;background:transparent;color:var(--tinta);padding:5px 12px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--tinta);color:var(--plano)}
+  @media (max-width:720px){.nav .link{display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:84px 0 72px}
+  .contours{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .contour{fill:none;stroke:var(--cobalto);stroke-width:1.4;stroke-opacity:.28;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:0;animation:trazo 2.6s cubic-bezier(.4,.1,.2,1) both;animation-delay:calc(var(--i) * 140ms)}
+  @keyframes trazo{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  .hero .wrap{position:relative}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.7rem,7vw,5.4rem);line-height:.98;letter-spacing:-.035em;margin:0 0 28px;max-width:13ch}
+  .hero .lead{font-size:1.2rem;max-width:50ch;margin:0 0 34px;color:var(--tinta)}
+  .acciones{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;padding:13px 24px;border-radius:999px;border:2px solid var(--tinta);transition:transform .15s ease,background .15s ease}
+  .btn.principal{background:var(--tinta);color:var(--plano)}
+  .btn.principal:hover{background:var(--cobalto);border-color:var(--cobalto)}
+  .btn.suave{background:transparent;color:var(--tinta)}
+  .btn.suave:hover{background:var(--senal);border-color:var(--tinta)}
+  .btn:active{transform:translateY(1px)}
+
+  .datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:64px 0 0;padding:0;list-style:none;max-width:900px}
+  .datos li{border-top:2px solid var(--tinta);padding-top:12px;font-size:.98rem;line-height:1.45}
+  .datos strong{display:block;font-family:var(--display);font-size:1.08rem;margin-bottom:2px}
+  @media (max-width:760px){.datos{grid-template-columns:1fr;gap:18px}}
+
+  /* secciones */
+  section{padding:84px 0}
+  .titulo{font-family:var(--display);font-weight:800;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 14px;max-width:20ch}
+  .intro{max-width:56ch;color:var(--tinta-2);margin:0 0 48px}
+
+  /* servicios */
+  .servicios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 56px}
+  .servicios h3{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:-.015em;margin:0 0 8px}
+  .servicios p{margin:0;color:var(--tinta-2);max-width:46ch}
+  .servicios div{border-left:6px solid var(--senal);padding-left:20px}
+  @media (max-width:760px){.servicios{grid-template-columns:1fr}}
+
+  /* proyectos */
+  #proyectos{background:var(--blanco)}
+  .proyecto{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;padding:56px 0;border-top:1px solid var(--plano-2)}
+  .proyecto:first-of-type{border-top:0;padding-top:8px}
+  .proyecto.invertido .copia{order:2}
+  .copia h3{font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.03em;line-height:1.05;margin:0 0 10px}
+  .copia .resumen{margin:0 0 18px;max-width:50ch}
+  .copia ul{margin:0 0 22px;padding-left:1.15em;max-width:52ch;color:var(--tinta-2)}
+  .copia li{margin-bottom:6px}
+  .copia li::marker{color:var(--cobalto)}
+  .tecnologias{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+  .tecnologias li{font-family:var(--display);font-weight:500;font-size:.88rem;background:var(--tinte,var(--plano));border-radius:999px;padding:4px 12px;margin:0}
+  .estado{font-size:.92rem;color:var(--tinta-2);margin:0;max-width:52ch}
+  .estado b{font-family:var(--display);color:var(--tinta);font-weight:700}
+  .vitrina{background:var(--fondo,var(--plano));border-radius:32px;padding:34px 20px;display:flex;justify-content:center}
+  .vitrina svg{width:min(100%,250px);height:auto;filter:drop-shadow(0 18px 24px rgba(16,24,40,.18))}
+  @media (max-width:860px){
+    .proyecto{grid-template-columns:1fr;gap:28px;padding:44px 0}
+    .proyecto.invertido .copia{order:0}
+  }
+  .mas{margin-top:20px;padding-top:34px;border-top:1px solid var(--plano-2)}
+  .mas h3{font-family:var(--display);font-size:1.3rem;margin:0 0 8px}
+  .mas p{margin:0;max-width:60ch;color:var(--tinta-2)}
+
+  /* dibujos de las apps */
+  .ph{fill:var(--tinta)}
+  .sc{fill:var(--blanco)}
+  .mp{fill:#DCE5FF}
+  .vd{fill:#D9F0E5}
+  .ln{fill:var(--plano-2)}
+  .ac{fill:var(--cobalto)}
+  .yl{fill:var(--senal)}
+  .gn{fill:var(--hoja)}
+  .rd{fill:none;stroke:var(--blanco);stroke-width:6;stroke-linecap:round}
+  .tr{fill:none;stroke:var(--cobalto);stroke-width:3;stroke-dasharray:2 6;stroke-linecap:round}
+
+  /* stack */
+  .stack{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+  .stack h3{font-family:var(--display);font-weight:700;font-size:1.1rem;margin:0 0 10px}
+  .stack ul{margin:0;padding:0;list-style:none;color:var(--tinta-2);font-size:.98rem;line-height:1.8}
+  @media (max-width:900px){.stack{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:480px){.stack{grid-template-columns:1fr}}
+
+  /* contacto */
+  #contacto{background:var(--tinta);color:var(--plano)}
+  #contacto .titulo{color:var(--plano);max-width:18ch}
+  #contacto .intro{color:#C3CBDA}
+  .correo{display:inline-block;font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,4.2vw,2.8rem);letter-spacing:-.03em;text-decoration:none;border-bottom:4px solid var(--senal);margin-bottom:34px;word-break:break-all}
+  .correo:hover{color:var(--senal)}
+  #contacto .btn{border-color:var(--plano);color:var(--plano)}
+  #contacto .btn:hover{background:var(--senal);color:var(--tinta);border-color:var(--senal)}
+  footer{background:var(--tinta);color:#9AA4B8;padding:0 0 40px;font-size:.9rem}
+  footer .wrap{border-top:1px solid #2A3550;padding-top:22px}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .contour{animation:none}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Alexis Cabrera</a>
+    <nav class="nav" aria-label="Principal">
+      <a class="link" href="#proyectos"><span class="es">Proyectos</span><span class="en">Projects</span></a>
+      <a class="link" href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
+      <a class="link" href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <svg class="contours" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+<path class="contour" style="--i:0" pathLength="1" d="M922.5 330.0 C925.2 336.5 928.5 346.6 924.4 352.3 C920.4 358.1 906.9 361.4 898.4 364.7 C889.8 367.9 881.8 370.4 873.2 371.6 C864.6 372.7 855.4 372.7 846.8 371.6 C838.2 370.4 830.2 367.9 821.6 364.7 C813.1 361.4 799.6 358.1 795.6 352.3 C791.5 346.6 794.8 336.5 797.5 330.0 C800.2 323.5 808.0 319.2 811.8 313.3 C815.6 307.3 814.9 299.2 820.4 294.3 C826.0 289.4 836.3 285.6 845.4 283.8 C854.4 282.1 865.6 282.1 874.6 283.8 C883.7 285.6 894.0 289.4 899.6 294.3 C905.1 299.2 904.4 307.3 908.2 313.3 C912.0 319.2 919.8 323.5 922.5 330.0 Z"/>
+<path class="contour" style="--i:1" pathLength="1" d="M1001.5 330.0 C1006.7 343.6 1003.8 364.4 993.4 376.2 C982.9 388.1 956.3 394.0 938.8 401.2 C921.3 408.3 906.0 416.3 888.2 419.0 C870.5 421.7 851.2 419.4 832.3 417.4 C813.4 415.3 793.0 413.5 774.9 406.9 C756.7 400.2 729.9 390.2 723.5 377.3 C717.1 364.5 731.3 344.0 736.5 330.0 C741.7 316.0 748.4 306.5 754.6 293.5 C760.8 280.5 761.1 262.1 773.6 252.0 C786.0 241.9 809.6 236.4 829.2 233.0 C848.9 229.6 872.8 227.2 891.3 231.3 C909.7 235.5 928.3 247.2 940.1 257.7 C951.9 268.2 952.0 282.5 962.2 294.6 C972.5 306.6 996.3 316.4 1001.5 330.0 Z"/>
+<path class="contour" style="--i:2" pathLength="1" d="M1086.8 330.0 C1092.4 350.7 1073.5 379.9 1055.5 397.8 C1037.5 415.7 1004.2 425.8 978.8 437.3 C953.4 448.7 930.1 462.1 903.3 466.4 C876.4 470.8 847.6 465.8 817.6 463.6 C787.7 461.4 750.2 463.9 723.4 453.3 C696.6 442.8 664.0 420.9 657.0 400.4 C650.1 379.8 676.2 351.5 681.8 330.0 C687.4 308.5 683.2 291.4 690.6 271.3 C698.0 251.2 705.9 224.1 726.3 209.3 C746.7 194.4 782.9 187.2 813.1 182.2 C843.4 177.2 880.6 172.1 907.8 179.3 C934.9 186.5 956.9 209.6 975.9 225.3 C994.9 241.1 1003.5 256.4 1021.9 273.8 C1040.4 291.3 1081.2 309.3 1086.8 330.0 Z"/>
+<path class="contour" style="--i:3" pathLength="1" d="M1172.1 330.0 C1175.3 357.9 1136.1 392.8 1110.7 416.9 C1085.4 441.0 1052.3 458.7 1020.2 474.6 C988.0 490.6 954.2 506.1 917.9 512.5 C881.5 518.9 843.5 514.7 802.0 513.0 C760.5 511.4 702.4 518.1 668.8 502.6 C635.3 487.1 607.7 448.6 600.8 419.9 C593.8 391.1 624.0 358.9 627.1 330.0 C630.3 301.1 610.8 273.7 619.7 246.7 C628.6 219.7 650.9 187.3 680.4 167.8 C709.9 148.4 756.1 136.2 796.6 130.0 C837.1 123.7 887.9 119.5 923.3 130.5 C958.6 141.4 980.5 176.0 1008.6 195.8 C1036.7 215.7 1064.6 227.3 1091.8 249.6 C1119.1 272.0 1169.0 302.1 1172.1 330.0 Z"/>
+<path class="contour" style="--i:4" pathLength="1" d="M1250.4 330.0 C1248.6 365.5 1193.2 404.1 1162.0 434.7 C1130.8 465.3 1101.6 493.1 1063.2 513.5 C1024.9 533.9 978.4 547.7 931.9 556.9 C885.5 566.1 837.2 569.4 784.4 568.5 C731.6 567.6 653.0 573.4 614.9 551.3 C576.8 529.1 563.8 472.4 555.6 435.6 C547.3 398.7 567.2 365.8 565.4 330.0 C563.6 294.2 533.1 254.4 544.9 220.7 C556.6 187.0 597.0 152.0 636.1 127.9 C675.2 103.8 729.4 82.8 779.5 76.1 C829.6 69.4 893.1 72.7 936.8 87.7 C980.6 102.6 1002.7 143.4 1042.0 165.7 C1081.3 188.0 1138.0 194.2 1172.7 221.6 C1207.5 248.9 1252.2 294.5 1250.4 330.0 Z"/>
+<path class="contour" style="--i:5" pathLength="1" d="M1317.2 330.0 C1309.3 373.6 1248.9 415.6 1213.8 452.7 C1178.7 489.8 1151.3 528.0 1106.7 552.7 C1062.0 577.4 1002.9 587.9 945.9 601.0 C888.9 614.1 827.7 632.3 764.5 631.3 C701.3 630.3 607.7 625.4 566.6 594.9 C525.5 564.5 530.2 492.8 517.8 448.6 C505.4 404.5 500.1 372.3 492.2 330.0 C484.3 287.7 453.8 235.2 470.5 195.0 C487.2 154.7 543.7 117.1 592.3 88.3 C640.9 59.4 703.0 27.9 762.3 21.9 C821.6 15.9 895.0 34.1 948.1 52.2 C1001.2 70.3 1028.8 107.4 1081.0 130.5 C1133.2 153.6 1221.8 157.7 1261.1 190.9 C1300.5 224.2 1325.1 286.4 1317.2 330.0 Z"/>
+<path class="contour" style="--i:6" pathLength="1" d="M1372.1 330.0 C1358.8 382.0 1307.1 428.7 1269.9 472.1 C1232.6 515.5 1200.0 561.1 1148.5 590.5 C1097.0 619.8 1028.5 630.0 960.9 648.2 C893.2 666.4 814.9 703.0 742.7 699.9 C670.6 696.8 571.8 669.4 528.0 629.7 C484.3 590.0 500.5 511.6 480.3 461.6 C460.2 411.7 420.4 378.5 407.1 330.0 C393.8 281.5 377.2 217.8 400.4 170.7 C423.7 123.5 489.2 80.6 546.9 47.3 C604.5 14.0 677.7 -25.0 746.1 -29.2 C814.6 -33.3 893.6 3.2 957.5 22.5 C1021.4 41.8 1064.3 63.6 1129.7 86.5 C1195.1 109.5 1309.4 119.6 1349.8 160.2 C1390.2 200.8 1385.4 278.0 1372.1 330.0 Z"/>
+<path class="contour" style="--i:7" pathLength="1" d="M1419.4 330.0 C1402.9 390.2 1369.9 444.1 1331.2 493.4 C1292.6 542.7 1246.4 590.9 1187.6 625.8 C1128.7 660.6 1055.9 678.7 978.1 702.6 C900.3 726.5 800.3 777.3 720.8 769.2 C641.2 761.2 548.4 703.0 500.7 654.4 C453.0 605.8 465.8 531.5 434.7 477.5 C403.7 423.4 330.9 384.9 314.4 330.0 C297.9 275.1 304.9 202.6 335.6 148.2 C366.3 93.8 432.5 40.6 498.6 3.7 C564.7 -33.1 654.2 -71.4 732.2 -73.0 C810.2 -74.7 890.4 -24.0 966.6 -6.4 C1042.9 11.2 1112.4 9.3 1189.6 32.4 C1266.9 55.5 1392.0 82.7 1430.3 132.3 C1468.6 181.9 1435.9 269.8 1419.4 330.0 Z"/>
+<path class="contour" style="--i:8" pathLength="1" d="M1466.0 330.0 C1449.3 397.7 1436.0 460.9 1395.7 515.8 C1355.5 570.6 1290.8 617.3 1224.6 659.2 C1158.4 701.1 1085.8 738.1 998.5 767.0 C911.2 795.8 786.8 848.4 700.7 832.4 C614.7 816.4 536.7 726.7 482.3 671.0 C427.9 615.3 418.1 555.2 374.6 498.3 C331.0 441.5 237.8 391.9 221.0 330.0 C204.3 268.1 236.1 188.8 274.0 126.8 C311.9 64.9 373.8 -2.7 448.4 -41.6 C523.0 -80.6 633.3 -107.0 721.5 -107.0 C809.7 -106.9 888.3 -54.4 977.8 -41.5 C1067.3 -28.7 1172.1 -55.0 1258.5 -29.8 C1344.9 -4.7 1461.7 49.4 1496.3 109.4 C1530.8 169.4 1482.8 262.3 1466.0 330.0 Z"/>
+
+    </svg>
+    <div class="wrap">
+      <h1>
+        <span class="es">Apps que funcionan en la calle, no solo en la demo.</span>
+        <span class="en">Apps that work in the field, not just in the demo.</span>
+      </h1>
+      <p class="lead">
+        <span class="es">Soy Alexis Cabrera, desarrollador independiente en Paraguay. Hago apps móviles con Flutter y Firebase, y sistemas de gestión a medida, desde la primera pantalla hasta la publicación en las tiendas.</span>
+        <span class="en">I'm Alexis Cabrera, a freelance developer in Paraguay. I build mobile apps with Flutter and Firebase, plus custom management systems, from the first screen to the app store release.</span>
+      </p>
+      <div class="acciones">
+        <a class="btn principal" href="mailto:ale.cabpa@gmail.com"><span class="es">Escribime</span><span class="en">Write to me</span></a>
+        <a class="btn suave" href="#proyectos"><span class="es">Ver proyectos</span><span class="en">See projects</span></a>
+      </div>
+      <ul class="datos">
+        <li><strong><span class="es">Ciudad del Este, Paraguay</span><span class="en">Ciudad del Este, Paraguay</span></strong><span class="es">Trabajo 100% remoto.</span><span class="en">Fully remote.</span></li>
+        <li><strong>Flutter, Firebase, Java, React</strong><span class="es">Móvil, web y escritorio.</span><span class="en">Mobile, web and desktop.</span></li>
+        <li><strong><span class="es">9 a 15 h (UTC−3)</span><span class="en">9:00 to 15:00 (UTC−3)</span></strong><span class="es">Coincide con la tarde en Europa.</span><span class="en">Overlaps with the European afternoon.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <h2 class="titulo"><span class="es">En qué te puedo ayudar</span><span class="en">How I can help</span></h2>
+      <p class="intro"><span class="es">Trabajo con equipos chicos y organizaciones que necesitan una herramienta que su gente use todos los días.</span><span class="en">I work with small teams and organizations that need a tool their people use every day.</span></p>
+      <div class="servicios">
+        <div>
+          <h3><span class="es">Apps móviles para iOS y Android</span><span class="en">Mobile apps for iOS and Android</span></h3>
+          <p><span class="es">Una sola base de código en Flutter, con cámara, mapas, ubicación y acceso con biometría. Me encargo también de las fichas y la revisión de App Store y Google Play.</span><span class="en">One Flutter codebase, with camera, maps, location and biometric sign-in. I also handle the App Store and Google Play listings and review.</span></p>
+        </div>
+        <div>
+          <h3><span class="es">Conexión con sistemas existentes</span><span class="en">Connecting to existing systems</span></h3>
+          <p><span class="es">Integro tu app con APIs REST, Firebase y sistemas como Frappe, incluida la facturación electrónica de Paraguay (SIFEN).</span><span class="en">I connect your app to REST APIs, Firebase and systems like Frappe, including Paraguay's electronic invoicing (SIFEN).</span></p>
+        </div>
+        <div>
+          <h3><span class="es">Sistemas de gestión a medida</span><span class="en">Custom management systems</span></h3>
+          <p><span class="es">Stock, compras, ventas, caja y reportes imprimibles, en escritorio o en la web, según cómo trabaje tu equipo.</span><span class="en">Inventory, purchasing, sales, cash register and printable reports, on desktop or the web, depending on how your team works.</span></p>
+        </div>
+        <div>
+          <h3><span class="es">Sitios de soporte y políticas</span><span class="en">Support sites and policies</span></h3>
+          <p><span class="es">Páginas de soporte y de privacidad que las tiendas de apps piden para publicar, claras y listas en línea.</span><span class="en">The support and privacy pages the app stores require before publishing, clear and ready online.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap">
+      <h2 class="titulo"><span class="es">Proyectos</span><span class="en">Projects</span></h2>
+      <p class="intro"><span class="es">La mayoría son trabajos para clientes y su código es privado. En una llamada te muestro cómo funcionan.</span><span class="en">Most of these are client work and the code is private. On a call I can show you how they work.</span></p>
+
+      <!-- ===================== 1. MUNI APP ===================== -->
+      <article class="proyecto" style="--fondo:#E6ECFF;--tinte:#E6ECFF">
+        <div class="copia">
+          <h3>Muni App</h3>
+          <p class="resumen"><span class="es">App para funcionarios de un gobierno local que gestionan lugares, establecimientos y casos ambientales (denuncias, solicitudes y controles) desde el celular, en plena calle.</span><span class="en">An app for local government staff who manage places, businesses and environmental cases (complaints, requests and inspections) from their phones, out in the field.</span></p>
+          <ul>
+            <li><span class="es">Formularios dinámicos con validación campo por campo.</span><span class="en">Dynamic forms with field-by-field validation.</span></li>
+            <li><span class="es">Fotos con la cámara, comprimidas antes de enviarse.</span><span class="en">Camera photos, compressed before upload.</span></li>
+            <li><span class="es">Mapa con la ubicación exacta de cada caso.</span><span class="en">Map with the exact location of each case.</span></li>
+            <li><span class="es">Ingreso con la biometría del dispositivo.</span><span class="en">Sign-in with the device's biometrics.</span></li>
+          </ul>
+          <ul class="tecnologias"><li>Flutter</li><li>Riverpod</li><li>Dio</li><li>flutter_map</li></ul>
+          <p class="estado"><b><span class="es">Estado:</span><span class="en">Status:</span></b> <span class="es">en proceso de publicación en App Store y Google Play.</span><span class="en">being published on the App Store and Google Play.</span></p>
+        </div>
+        <div class="vitrina" aria-hidden="true">
+          <svg viewBox="0 0 240 320"><defs><clipPath id="c1"><rect x="58" y="22" width="124" height="276" rx="14"/></clipPath></defs>
+            <rect class="ph" x="50" y="10" width="140" height="300" rx="22"/>
+            <rect class="sc" x="58" y="22" width="124" height="276" rx="14"/>
+            <g clip-path="url(#c1)">
+              <rect class="mp" x="58" y="22" width="124" height="130"/>
+              <path class="rd" d="M50 78 L190 58"/><path class="rd" d="M98 20 L124 154"/><path class="rd" d="M50 118 Q120 96 190 126"/>
+              <ellipse cx="124" cy="104" rx="9" ry="3" fill="#101828" fill-opacity=".18"/>
+              <path class="ac" d="M124 100 C112 86 110 76 124 68 C138 76 136 86 124 100Z"/><circle class="sc" cx="124" cy="80" r="4"/>
+              <rect x="70" y="164" width="100" height="22" rx="7" fill="#fff" stroke="#E2E7EE" stroke-width="2"/><rect class="ln" x="78" y="173" width="46" height="5" rx="2.5"/>
+              <rect x="70" y="194" width="100" height="22" rx="7" fill="#fff" stroke="#E2E7EE" stroke-width="2"/><rect class="ln" x="78" y="203" width="64" height="5" rx="2.5"/>
+              <rect class="ln" x="70" y="226" width="44" height="34" rx="7"/><circle class="yl" cx="82" cy="238" r="5"/><path class="gn" d="M72 258 L86 244 L96 252 L104 246 L112 258Z"/>
+              <rect class="ac" x="70" y="268" width="100" height="22" rx="11"/>
+            </g>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ===================== 2. RJ CFC ===================== -->
+      <article class="proyecto invertido" style="--fondo:#FFF3C4;--tinte:#FFF3C4">
+        <div class="copia">
+          <h3>RJ CFC</h3>
+          <p class="resumen"><span class="es">Herramienta para iglesias y organizaciones que trabajan con personas bajo una estructura de liderazgo: ordena afiliados, líderes y miembros, y lleva la asistencia.</span><span class="en">A tool for churches and organizations that work with people under a leadership structure: it keeps members, leaders and affiliates organized and tracks attendance.</span></p>
+          <ul>
+            <li><span class="es">Fichas de personas, líneas de liderazgo y registro de asistencia con resumen en gráficos.</span><span class="en">People records, leadership lines and attendance tracking with chart summaries.</span></li>
+            <li><span class="es">Avisos automáticos de cumpleaños, derivaciones y recordatorios de asistencia, con Cloud Functions.</span><span class="en">Automatic notifications for birthdays, referrals and attendance reminders, powered by Cloud Functions.</span></li>
+            <li><span class="es">Arquitectura limpia (dominio, datos y presentación) para que sea fácil de mantener.</span><span class="en">Clean architecture (domain, data and presentation) to keep it easy to maintain.</span></li>
+            <li><span class="es">Sitio web de soporte y formulario de registro en la web.</span><span class="en">Web support site and a web sign-up form.</span></li>
+          </ul>
+          <ul class="tecnologias"><li>Flutter</li><li>Riverpod</li><li>Firebase Auth</li><li>Realtime Database</li><li>Cloud Functions</li><li>Push</li></ul>
+          <p class="estado"><b><span class="es">Estado:</span><span class="en">Status:</span></b> <span class="es">en uso, con soporte público para sus usuarios.</span><span class="en">in use, with public support for its users.</span></p>
+        </div>
+        <div class="vitrina" aria-hidden="true">
+          <svg viewBox="0 0 240 320"><defs><clipPath id="c2"><rect x="58" y="22" width="124" height="276" rx="14"/></clipPath></defs>
+            <rect class="ph" x="50" y="10" width="140" height="300" rx="22"/>
+            <rect class="sc" x="58" y="22" width="124" height="276" rx="14"/>
+            <g clip-path="url(#c2)">
+              <rect class="ac" x="58" y="22" width="124" height="34"/><rect class="sc" x="70" y="35" width="52" height="8" rx="4"/>
+              <rect class="ac" x="72" y="112" width="16" height="30" rx="3"/><rect class="ac" x="94" y="90" width="16" height="52" rx="3"/><rect class="yl" x="116" y="72" width="16" height="70" rx="3"/><rect class="ac" x="138" y="100" width="16" height="42" rx="3"/><rect class="ac" x="160" y="84" width="14" height="58" rx="3" opacity=".0"/>
+              <rect class="ln" x="70" y="146" width="104" height="3" rx="1.5"/>
+              <circle class="ln" cx="82" cy="172" r="10"/><rect class="ln" x="98" y="165" width="56" height="6" rx="3"/><rect class="ln" x="98" y="176" width="36" height="5" rx="2.5"/><circle class="gn" cx="166" cy="172" r="6"/>
+              <circle class="ln" cx="82" cy="204" r="10"/><rect class="ln" x="98" y="197" width="62" height="6" rx="3"/><rect class="ln" x="98" y="208" width="30" height="5" rx="2.5"/><circle class="gn" cx="166" cy="204" r="6"/>
+              <circle class="ln" cx="82" cy="236" r="10"/><rect class="ln" x="98" y="229" width="48" height="6" rx="3"/><rect class="ln" x="98" y="240" width="40" height="5" rx="2.5"/><circle class="ln" cx="166" cy="236" r="6"/>
+              <rect class="yl" x="70" y="262" width="104" height="24" rx="12"/><rect class="ph" x="100" y="272" width="44" height="5" rx="2.5"/>
+            </g>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ===================== 3. TOP APP ===================== -->
+      <article class="proyecto" style="--fondo:#D9F0E5;--tinte:#D9F0E5">
+        <div class="copia">
+          <h3><span class="es">App de guía en mapa e inventario</span><span class="en">Map guide and inventory app</span></h3>
+          <p class="resumen"><span class="es">App para orientarse en el terreno y controlar el inventario de artículos, pensada para usarse con mala señal.</span><span class="en">An app to find your way on the ground and keep track of inventory items, designed to work with poor signal.</span></p>
+          <ul>
+            <li><span class="es">Mapas con Google Maps y geolocalización, con descarga de mapas por versión.</span><span class="en">Google Maps with geolocation, plus versioned map downloads.</span></li>
+            <li><span class="es">Exportación de recorridos a archivos KML.</span><span class="en">Route export to KML files.</span></li>
+            <li><span class="es">Inventario con formulario de artículos e informes.</span><span class="en">Inventory with an item form and reports.</span></li>
+            <li><span class="es">Datos guardados en el dispositivo (SQLite) y en Firebase.</span><span class="en">Data stored on the device (SQLite) and in Firebase.</span></li>
+          </ul>
+          <ul class="tecnologias"><li>Flutter</li><li>Google Maps</li><li>SQLite</li><li>Firebase</li><li>Riverpod</li></ul>
+          <p class="estado"><b><span class="es">Estado:</span><span class="en">Status:</span></b> <span class="es">versión 1.4 en uso.</span><span class="en">version 1.4 in use.</span></p>
+        </div>
+        <div class="vitrina" aria-hidden="true">
+          <svg viewBox="0 0 240 320"><defs><clipPath id="c3"><rect x="58" y="22" width="124" height="276" rx="14"/></clipPath></defs>
+            <rect class="ph" x="50" y="10" width="140" height="300" rx="22"/>
+            <rect class="sc" x="58" y="22" width="124" height="276" rx="14"/>
+            <g clip-path="url(#c3)">
+              <rect class="vd" x="58" y="22" width="124" height="150"/>
+              <path class="tr" d="M72 150 C90 120 84 96 112 90 C140 84 134 58 164 50"/>
+              <circle class="ac" cx="72" cy="150" r="7"/><circle class="yl" cx="164" cy="50" r="7"/><circle class="sc" cx="72" cy="150" r="2.5"/>
+              <rect class="ln" x="70" y="184" width="26" height="26" rx="6"/><rect class="ln" x="104" y="188" width="52" height="6" rx="3"/><rect class="ln" x="104" y="199" width="34" height="5" rx="2.5"/><rect class="yl" x="158" y="190" width="16" height="14" rx="7"/>
+              <rect class="ln" x="70" y="218" width="26" height="26" rx="6"/><rect class="ln" x="104" y="222" width="46" height="6" rx="3"/><rect class="ln" x="104" y="233" width="38" height="5" rx="2.5"/><rect class="yl" x="158" y="224" width="16" height="14" rx="7"/>
+              <rect class="ac" x="70" y="258" width="104" height="26" rx="13"/><rect class="sc" x="96" y="269" width="52" height="5" rx="2.5"/>
+            </g>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ===================== 4. IPA HORAS ===================== -->
+      <article class="proyecto invertido" style="--fondo:#E6ECFF;--tinte:#E6ECFF">
+        <div class="copia">
+          <h3>IPA Horas</h3>
+          <p class="resumen"><span class="es">App para registrar las horas de trabajo por proyecto, cliente y actividad, y controlar la flota, el combustible y los vales.</span><span class="en">An app for logging work hours by project, client and activity, and for tracking vehicles, fuel and vouchers.</span></p>
+          <ul>
+            <li><span class="es">Registro de horas por proyecto, cliente y actividad.</span><span class="en">Hour logging by project, client and activity.</span></li>
+            <li><span class="es">Flota, tipos de combustible y vales.</span><span class="en">Vehicle fleet, fuel types and vouchers.</span></li>
+            <li><span class="es">Cámara y mapa en el registro, y acceso con biometría.</span><span class="en">Camera and map in the log, plus biometric sign-in.</span></li>
+          </ul>
+          <ul class="tecnologias"><li>Flutter</li><li>Riverpod</li><li>Dio</li><li>flutter_map</li></ul>
+        </div>
+        <div class="vitrina" aria-hidden="true">
+          <svg viewBox="0 0 240 320"><defs><clipPath id="c4"><rect x="58" y="22" width="124" height="276" rx="14"/></clipPath></defs>
+            <rect class="ph" x="50" y="10" width="140" height="300" rx="22"/>
+            <rect class="sc" x="58" y="22" width="124" height="276" rx="14"/>
+            <g clip-path="url(#c4)">
+              <circle cx="120" cy="88" r="42" fill="#fff" stroke="#2B50F5" stroke-width="7"/>
+              <path d="M120 88 L120 62" stroke="#101828" stroke-width="4" stroke-linecap="round"/><path d="M120 88 L140 98" stroke="#101828" stroke-width="4" stroke-linecap="round"/><circle class="ph" cx="120" cy="88" r="4"/>
+              <rect class="ln" x="70" y="148" width="60" height="6" rx="3"/>
+              <rect class="ac" x="70" y="164" width="84" height="16" rx="8"/><rect class="ln" x="70" y="186" width="104" height="16" rx="8"/><rect class="yl" x="70" y="208" width="62" height="16" rx="8"/><rect class="gn" x="70" y="230" width="94" height="16" rx="8"/>
+              <rect class="ph" x="70" y="262" width="104" height="24" rx="12"/><rect class="sc" x="98" y="272" width="48" height="5" rx="2.5"/>
+            </g>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ===================== 5. STOCK (Java) ===================== -->
+      <article class="proyecto" style="--fondo:#FFF3C4;--tinte:#FFF3C4">
+        <div class="copia">
+          <h3><span class="es">Sistema de stock, ventas y caja</span><span class="en">Inventory, sales and cash system</span></h3>
+          <p class="resumen"><span class="es">Sistema de escritorio para controlar el stock, las compras, las ventas y la caja de un negocio, con reportes listos para imprimir.</span><span class="en">A desktop system to manage a business's inventory, purchases, sales and cash register, with print-ready reports.</span></p>
+          <ul>
+            <li><span class="es">Caja completa: apertura, cobros, pagos y cierre, con vista para administración.</span><span class="en">Full cash register flow: opening, collections, payments and closing, with an admin view.</span></li>
+            <li><span class="es">Clientes, proveedores y ciudades, con búsquedas rápidas.</span><span class="en">Customers, suppliers and cities, with quick search.</span></li>
+            <li><span class="es">Reportes de ventas, compras y productos, y aprobación de producción con ficha técnica.</span><span class="en">Sales, purchasing and product reports, plus production approval with technical sheets.</span></li>
+            <li><span class="es">Órdenes de trabajo con imágenes adjuntas.</span><span class="en">Work orders with attached images.</span></li>
+          </ul>
+          <ul class="tecnologias"><li>Java</li><li>NetBeans</li><li>JasperReports</li></ul>
+        </div>
+        <div class="vitrina" aria-hidden="true">
+          <svg viewBox="0 0 240 320">
+            <rect class="ph" x="12" y="46" width="216" height="228" rx="12"/>
+            <rect class="sc" x="18" y="62" width="204" height="206" rx="7"/>
+            <circle class="yl" cx="28" cy="54" r="3.5"/><circle class="gn" cx="39" cy="54" r="3.5"/><circle fill="#fff" cx="50" cy="54" r="3.5"/>
+            <rect class="mp" x="18" y="62" width="52" height="206"/>
+            <rect class="ac" x="26" y="74" width="36" height="8" rx="4"/><rect class="sc" x="26" y="92" width="30" height="6" rx="3"/><rect class="sc" x="26" y="106" width="34" height="6" rx="3"/><rect class="sc" x="26" y="120" width="26" height="6" rx="3"/>
+            <rect class="ac" x="80" y="72" width="132" height="14" rx="3"/>
+            <rect class="ln" x="80" y="92" width="132" height="12" rx="3"/><rect class="sc" x="80" y="108" width="132" height="12" rx="3"/><rect class="ln" x="80" y="124" width="132" height="12" rx="3"/><rect class="sc" x="80" y="140" width="132" height="12" rx="3"/>
+            <g transform="translate(120 170)"><rect class="ph" x="0" y="0" width="86" height="88" rx="6"/><rect class="sc" x="5" y="5" width="76" height="78" rx="3"/><rect class="yl" x="12" y="14" width="40" height="7" rx="3.5"/><rect class="ln" x="12" y="30" width="62" height="5" rx="2.5"/><rect class="ln" x="12" y="42" width="54" height="5" rx="2.5"/><rect class="ln" x="12" y="54" width="62" height="5" rx="2.5"/><rect class="ac" x="12" y="68" width="30" height="8" rx="4"/></g>
+          </svg>
+        </div>
+      </article>
+
+      <!-- ===================== 6. PEDIDOS WEB ===================== -->
+      <article class="proyecto invertido" style="--fondo:#D9F0E5;--tinte:#D9F0E5">
+        <div class="copia">
+          <h3><span class="es">Gestión de pedidos en la web</span><span class="en">Web order management</span></h3>
+          <p class="resumen"><span class="es">Prototipo web para llevar pedidos, clientes y proveedores desde un panel con resúmenes.</span><span class="en">A web prototype to manage orders, customers and suppliers from a dashboard with summaries.</span></p>
+          <ul>
+            <li><span class="es">Panel principal y vistas de pedidos, clientes, proveedores y resúmenes.</span><span class="en">Main dashboard plus orders, customers, suppliers and summaries views.</span></li>
+            <li><span class="es">Diseño adaptable al celular y a la computadora.</span><span class="en">Responsive layout for phone and desktop.</span></li>
+          </ul>
+          <ul class="tecnologias"><li>React</li><li>TypeScript</li><li>Vite</li><li>Tailwind</li><li>shadcn/ui</li><li>Lovable</li></ul>
+          <p class="estado"><b><span class="es">Estado:</span><span class="en">Status:</span></b> <span class="es">prototipo.</span><span class="en">prototype.</span></p>
+        </div>
+        <div class="vitrina" aria-hidden="true">
+          <svg viewBox="0 0 240 320">
+            <rect class="ph" x="12" y="46" width="216" height="228" rx="12"/>
+            <rect class="sc" x="18" y="62" width="204" height="206" rx="7"/>
+            <circle class="yl" cx="28" cy="54" r="3.5"/><circle class="gn" cx="39" cy="54" r="3.5"/><rect fill="#fff" x="70" y="50" width="110" height="8" rx="4" opacity=".9"/>
+            <rect class="ph" x="18" y="62" width="44" height="206"/>
+            <rect class="yl" x="26" y="74" width="28" height="7" rx="3.5"/><rect fill="#fff" opacity=".6" x="26" y="92" width="24" height="5" rx="2.5"/><rect fill="#fff" opacity=".6" x="26" y="106" width="28" height="5" rx="2.5"/><rect fill="#fff" opacity=".6" x="26" y="120" width="20" height="5" rx="2.5"/>
+            <rect class="mp" x="72" y="74" width="46" height="44" rx="6"/><rect class="vd" x="124" y="74" width="46" height="44" rx="6"/><rect class="yl" x="176" y="74" width="38" height="44" rx="6" opacity=".7"/>
+            <rect class="ac" x="80" y="86" width="22" height="8" rx="4"/><rect class="gn" x="132" y="86" width="22" height="8" rx="4"/>
+            <rect class="ln" x="72" y="130" width="142" height="22" rx="5"/><rect class="ln" x="72" y="158" width="142" height="22" rx="5"/><rect class="ln" x="72" y="186" width="142" height="22" rx="5"/><rect class="ln" x="72" y="214" width="142" height="22" rx="5"/>
+            <rect class="ac" x="80" y="138" width="44" height="6" rx="3"/><rect class="ac" x="80" y="166" width="58" height="6" rx="3"/><rect class="ac" x="80" y="194" width="36" height="6" rx="3"/><rect class="ac" x="80" y="222" width="50" height="6" rx="3"/>
+          </svg>
+        </div>
+      </article>
+
+      <div class="mas">
+        <h3><span class="es">Código abierto</span><span class="en">Open source</span></h3>
+        <p><span class="es">Algunos proyectos más chicos están públicos en mi <a href="https://github.com/alexiscabpa">GitHub</a>, como un simulador de votación hecho con Flutter que empaqueta una web como app móvil.</span><span class="en">A few smaller projects are public on my <a href="https://github.com/alexiscabpa">GitHub</a>, like a voting simulator built with Flutter that packages a website as a mobile app.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <h2 class="titulo"><span class="es">Con qué trabajo</span><span class="en">What I work with</span></h2>
+      <p class="intro"><span class="es">Herramientas que uso en mis proyectos reales.</span><span class="en">Tools I use in my real projects.</span></p>
+      <div class="stack">
+        <div>
+          <h3><span class="es">Móvil</span><span class="en">Mobile</span></h3>
+          <ul><li>Flutter y Dart</li><li>Riverpod</li><li><span class="es">Arquitectura limpia</span><span class="en">Clean architecture</span></li><li><span class="es">Mapas y ubicación</span><span class="en">Maps and location</span></li><li><span class="es">Cámara y biometría</span><span class="en">Camera and biometrics</span></li></ul>
+        </div>
+        <div>
+          <h3>Backend</h3>
+          <ul><li>Firebase (Auth, Realtime Database, Firestore)</li><li>Cloud Functions</li><li><span class="es">Notificaciones push</span><span class="en">Push notifications</span></li><li><span class="es">APIs REST y Frappe</span><span class="en">REST APIs and Frappe</span></li><li><span class="es">Facturación SIFEN</span><span class="en">SIFEN e-invoicing</span></li></ul>
+        </div>
+        <div>
+          <h3>Web</h3>
+          <ul><li>React y TypeScript</li><li>Vite</li><li>Tailwind</li><li>HTML y CSS</li><li>GitHub Pages</li></ul>
+        </div>
+        <div>
+          <h3><span class="es">Escritorio</span><span class="en">Desktop</span></h3>
+          <ul><li>Java</li><li>JasperReports</li><li><span class="es">Reportes imprimibles</span><span class="en">Printable reports</span></li><li><span class="es">Bases de datos relacionales</span><span class="en">Relational databases</span></li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <h2 class="titulo"><span class="es">Contame qué necesitás</span><span class="en">Tell me what you need</span></h2>
+      <p class="intro"><span class="es">Escribime con una idea o un problema concreto y te respondo en el horario de atención con cómo lo encararía.</span><span class="en">Send me an idea or a concrete problem and I'll reply during office hours with how I'd approach it.</span></p>
+      <a class="correo" href="mailto:ale.cabpa@gmail.com">ale.cabpa@gmail.com</a>
+      <div class="acciones">
+        <a class="btn" href="https://github.com/alexiscabpa" rel="noopener">GitHub</a>
+        <!-- Cuando tengas tu LinkedIn, descomentá esta línea y poné tu URL:
+        <a class="btn" href="https://www.linkedin.com/in/TU-USUARIO" rel="noopener">LinkedIn</a> -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="es">© 2026 Alexis Cabrera. Hecho en Ciudad del Este, Paraguay.</span>
+    <span class="en">© 2026 Alexis Cabrera. Made in Ciudad del Este, Paraguay.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement, KEY = 'portfolio-lang';
+  function setLang(l) {
+    root.setAttribute('data-lang', l);
+    root.lang = l;
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === l ? 'true' : 'false');
+    });
+    try { localStorage.setItem(KEY, l); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  var nav = (navigator.language || 'es').toLowerCase();
+  setLang(saved || (nav.indexOf('es') === 0 ? 'es' : 'en'));
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang')); });
+  });
+})();
+</script>
+</body>
+</html>
